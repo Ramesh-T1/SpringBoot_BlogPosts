@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>HomePage</title>
+</head>
+<body>
+<div>
+<header th:replace="/header :: header"></header>
+</div>
+<div th:each="x:${Posts}">
+<strong><i>Posts....</i></strong>
+<h3><a th:href="@{'/posts/' + ${x.id}}" th:text="${x.title}">Title</a></h3>
+<p th:utext="${x.body}">body</p>
+<hr color="grey"/>
+</div>
+</body>
+</html>
